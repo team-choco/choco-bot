@@ -1,0 +1,65 @@
+{
+  "name": "kitkat-bot",
+  "version": "0.0.0-local.0",
+  "sha": "0.0.0-local.0",
+  "private": true,
+  "license": "MIT",
+  "main": "bot/bot.ts",
+  "homepage": "https://github.com/butter-cookie-kitkat/kitkat-bot",
+  "bugs": "https://github.com/butter-cookie-kitkat/kitkat-bot/issues",
+  "contributors": [
+    "Nick Woodward <nick@salte.io>"
+  ],
+  "scripts": {
+    "build": "ts-node ./scripts/version.ts",
+    "start": "ts-node .",
+    "start:live": "ts-node -T .",
+    "validate": "run-p test:coverage test:integration lint",
+    "test": "ts-mocha 'bot/**/__test__/**/*.spec.ts' --timeout 10000 --exit",
+    "test:integration": "ts-mocha 'bot/**/__integration__/**/*.spec.ts' --timeout 60000 --exit",
+    "test:coverage": "nyc npm run test",
+    "test:tdd": "ts-mocha --watch",
+    "lint": "eslint --ignore-path .gitignore bot/**/*.ts",
+    "lint:fix": "eslint --ignore-path .gitignore --fix"
+  },
+  "engines": {
+    "node": "12.0.x"
+  },
+  "dependencies": {
+    "@team-choco/command-plugin": "^0.1.1",
+    "@team-choco/core": "^0.1.1",
+    "@team-choco/discord-platform": "^0.1.1",
+    "dotenv": "^8.2.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  },
+  "devDependencies": {
+    "@team-choco/shell-platform": "^0.1.1",
+    "@types/chai": "^4.2.11",
+    "@types/debug": "^4.1.5",
+    "@types/node": "^12.12.47",
+    "@types/sinon": "^9.0.4",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "eslint": "^7.3.1",
+    "eslint-plugin-tsdoc": "^0.2.5",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "npm-run-all": "^4.1.5",
+    "sinon": "^9.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix",
+      "git add --force"
+    ],
+    "*.json": [
+      "git add --force"
+    ]
+  }
+}
