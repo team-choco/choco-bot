@@ -3,7 +3,7 @@
   "version": "0.0.0-local.0",
   "sha": "0.0.0-local.0",
   "private": true,
-  "license": "MIT",
+  "license": "AGPL-3.0-only",
   "main": "bot/bot.ts",
   "homepage": "https://github.com/butter-cookie-kitkat/kitkat-bot",
   "bugs": "https://github.com/butter-cookie-kitkat/kitkat-bot/issues",
