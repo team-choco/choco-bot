@@ -12,6 +12,7 @@
       "isolatedModules": true,
       "moduleResolution": "node",
       "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true,
     },
     "exclude": ["**/dist"]
   }
