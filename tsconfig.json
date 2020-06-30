@@ -12,6 +12,8 @@
       "isolatedModules": true,
       "moduleResolution": "node",
       "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true,
+      "resolveJsonModule": true
     },
     "exclude": ["**/dist"]
   }

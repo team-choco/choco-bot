@@ -1,4 +1,5 @@
 export enum COLORS {
   SUCCESS = '1ABC9C',
-  ERROR = 'E74D3C',
+  NOTIFY  = 'f1c40f',
+  FAILURE = 'E74D3C',
 }

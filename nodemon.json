@@ -1,0 +1,11 @@
+{
+  "watch": [
+    "bot",
+    ".env"
+  ],
+  "ext": "ts",
+  "ignore": [
+    "**/__test__/*.spec.ts",
+    "**/__integration__/*.spec.ts"
+  ]
+}
