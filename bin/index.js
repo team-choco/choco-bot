@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 const yargs = require('yargs');
+const { autoUpdate } = require('./auto-update');
 
-const { argv } = yargs.option('database-url', {
+yargs.option('database-url', {
   type: 'string',
   description: 'Specify the Database Connection URL.',
 }).option('discord-token', {
@@ -27,9 +28,7 @@ const { argv } = yargs.option('database-url', {
     'error',
   ],
   description: 'The level of log output to provide.',
-});
-
-if (!argv.help && !argv.version) {
+}).command('start', 'Starts Choco Bot!', ({ argv }) => {
   const { start } = require('../dist/choco-bot');
 
   start({
@@ -39,5 +38,7 @@ if (!argv.help && !argv.version) {
     platform: argv.platform,
     logLevel: argv['log-level'],
   });
-}
+}).command('auto', 'Allows Choco Bot to automatically update!', () => {
+  autoUpdate(process.argv.slice(2).join(' '));
+}).help().argv;
 
