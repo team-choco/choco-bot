@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const yargs = require('yargs');
-const { autoUpdate } = require('./auto-update');
 
 yargs.option('database-url', {
   type: 'string',
@@ -38,7 +37,5 @@ yargs.option('database-url', {
     platform: argv.platform,
     logLevel: argv['log-level'],
   });
-}).command('auto', 'Allows Choco Bot to automatically update!', () => {
-  autoUpdate(process.argv.slice(2).join(' '));
 }).help().argv;
 

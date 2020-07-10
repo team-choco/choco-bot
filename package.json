@@ -4,15 +4,15 @@
   "description": "Kweh! Choco Bot is here for all your Final Fantasy XIV needs!",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/team-choco/xiv.git"
+    "url": "git+https://github.com/team-choco/auto-updater.git"
   },
   "contributors": [
     "Nick Woodward <nick@salte.io>"
   ],
   "bugs": {
-    "url": "https://github.com/team-choco/xiv/issues"
+    "url": "https://github.com/team-choco/auto-updater/issues"
   },
-  "homepage": "https://github.com/team-choco/xiv",
+  "homepage": "https://github.com/team-choco/auto-updater",
   "source": "bot/bot.ts",
   "main": "dist/choco-bot.js",
   "types": "dist/index.d.ts",
