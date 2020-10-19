@@ -29,7 +29,7 @@
     "sequelize": "^5.0.0",
     "sequelize-typescript": "^1.1.0",
     "update-check": "^1.5.4",
-    "yargs": "^15.4.0"
+    "yargs": "^16.1.0"
   },
   "devDependencies": {
     "@team-choco/shell-platform": "^0.1.9",
