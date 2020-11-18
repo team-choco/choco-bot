@@ -166,7 +166,7 @@ export const whois: ChocoBotCommand = (bot) => {
     }));
   });
 
-  bot.command('whoami', async ({ message }) => {
+  bot.command('characters', async ({ message }) => {
     const characters = await choco.characters.get(message.author.id);
 
     if (characters.length === 0) {

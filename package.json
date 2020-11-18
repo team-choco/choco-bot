@@ -57,7 +57,7 @@
   },
   "scripts": {
     "build": "microbundle --target node -f cjs",
-    "start": "nodemon --exec ts-node ./bot/index.ts",
+    "start": "nodemon --require dotenv/config --exec ts-node ./bot/index.ts",
     "start:dev": "ts-node .",
     "validate": "run-p test:coverage test:integration lint",
     "test": "jest",
