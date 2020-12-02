@@ -22,7 +22,7 @@
     "@team-choco/core": "^0.1.8",
     "@team-choco/discord-platform": "^0.1.8",
     "@team-choco/utils": "^0.1.8",
-    "@team-choco/xiv": "^0.1.2",
+    "@team-choco/xiv": "^0.1.5",
     "chalk": "^4.1.0",
     "dotenv": "^8.2.0",
     "outdent": "^0.7.1",

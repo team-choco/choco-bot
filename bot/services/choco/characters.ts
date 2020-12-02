@@ -1,90 +1,101 @@
 import { ICharacters } from '../../database/characters';
 import { database } from '../../database/database';
-import { Characters } from '@team-choco/xiv';
 
 export class ChocoCharacters {
-    async add(character: ICharacters): Promise<ICharacters> {
-        const { Characters } = await database();
+  async add(character: ICharacters): Promise<ICharacters> {
+    const { Characters } = await database();
 
-        return Characters.create(character, {
-            raw: true,
-        });
+    return Characters.create(character, {
+      raw: true,
+    });
+  }
+
+  async update(user_id: string, lodestone_id: number, character: Partial<ICharacters>) {
+    const { Characters } = await database();
+
+    await Characters.update(character, {
+      where: {
+        user_id,
+        lodestone_id,
+      },
+    });
+
+    return this.get(user_id, lodestone_id);
+  }
+
+  async get(user_id: string): Promise<ICharacters[]>
+  async get(user_id: string, lodestone_id: number): Promise<ICharacters>
+  async get(user_id: string, lodestone_id?: number): Promise<(ICharacters | ICharacters[])> {
+    const { Characters } = await database();
+
+    if (lodestone_id) {
+      return Characters.findOne({
+        where: {
+          user_id,
+          lodestone_id,
+        },
+        raw: true,
+      });
     }
 
-    async update(user_id: string, lodestone_id: number, character: Partial<ICharacters>) {
-        const { Characters } = await database();
+    return Characters.findAll({
+      where: {
+        user_id,
+      },
+      raw: true,
+    });
+  }
 
-        await Characters.update(character, {
-            where: {
-                user_id,
-                lodestone_id,
-            },
-        });
+  async getMainCharacter(user_id: string): Promise<ICharacters> {
+    const { Characters } = await database();
 
-        return this.get(user_id, lodestone_id);
-    }
+    return Characters.findOne({
+      where: {
+        user_id,
+        main: true,
+      },
+      raw: true,
+    });
+  }
 
-    async get(user_id: string): Promise<ICharacters[]>
-    async get(user_id: string, lodestone_id: number): Promise<ICharacters>
-    async get(user_id: string, lodestone_id?: number): Promise<(ICharacters|ICharacters[])> {
-        const { Characters } = await database();
+  async getPendingCharacters(user_id: string): Promise<ICharacters[]> {
+    const { Characters } = await database();
 
-        if (lodestone_id) {
-            return Characters.findOne({
-                where: {
-                    user_id,
-                    lodestone_id,
-                },
-                raw: true,
-            });
-        }
-        
-        return Characters.findAll({
-            where: {
-                user_id,
-            },
-            raw: true,
-        });
-    }
+    return Characters.findAll({
+      where: {
+        user_id,
+        validated: false,
+      },
+      raw: true,
+    });
+  }
 
-    async getPendingCharacters(user_id: string): Promise<ICharacters[]> {
-        const { Characters } = await database();
+  async any(user_id: string): Promise<boolean> {
+    const { Characters } = await database();
 
-        return Characters.findAll({
-            where: {
-                user_id,
-                validated: false,
-            },
-            raw: true,
-        });
-    }
+    return await Characters.count({
+      where: {
+        user_id,
+      },
+    }) > 0;
+  }
 
-    async any(user_id: string): Promise<boolean> {
-        const { Characters } = await database();
+  async empty(user_id: string): Promise<boolean> {
+    const hasAny = await this.any(user_id);
 
-        return await Characters.count({
-            where: {
-                user_id,
-            },
-        }) > 0;
-    }
+    return !hasAny;
+  }
 
-    async empty(user_id: string): Promise<boolean> {
-        const hasAny = await this.any(user_id);
+  async getByUserIDAndServerAndName(user_id: string, server: string, name: string): Promise<(null | ICharacters)> {
+    const { Characters } = await database();
 
-        return !hasAny;
-    }
-
-    async getByUserIDAndServerAndName(user_id: string, server: string, name: string): Promise<(null|ICharacters)> {
-        const { Characters } = await database();
-
-        return await Characters.findOne({
-            where: {
-                user_id,
-                server,
-                name,
-            },
-            raw: true,
-        }) || null;
-    }
+    return await Characters.findOne({
+      where: {
+        user_id,
+        server,
+        name,
+      },
+      raw: true,
+    }) || null;
+  }
 }

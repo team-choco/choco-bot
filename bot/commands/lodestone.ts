@@ -187,4 +187,26 @@ export const whois: ChocoBotCommand = (bot) => {
       `,
     }));
   });
+
+  bot.command('whoami', async ({ message }) => {
+    const character = await choco.characters.getMainCharacter(message.author.id);
+
+    if (!character) {
+      throw new ChocoCommandError({
+        title: `Characters`,
+        content: i18n('CHOCO_AUTHOR_NO_CHARACTERS'),
+      });
+    }
+
+    const info = await xiv.characters.get(character.lodestone_id);
+
+    const title = await xiv.titles.get(info.Title);
+
+    return message.reply(success({
+      title: [character.name, xiv.characters.isFeminine(info.Gender) ? title.NameFeminine : title.NameMasculine],
+      content: outdent`
+        TODO: Create Character Sheet
+      `,
+    }));
+  });
 };
