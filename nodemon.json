@@ -1,6 +1,6 @@
 {
   "watch": [
-    "bot",
+    "bot/**/*",
     ".env"
   ],
   "ext": "ts",

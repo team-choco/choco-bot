@@ -26,3 +26,23 @@ export const info: ChocoBotCommand = (bot) => {
     });
   });
 };
+
+export const kill: ChocoBotCommand = (bot) => {
+  if (CONFIG.ENVIRONMENT === 'local') {
+    bot.command('kill', async ({ message }) => {
+      const { id, username } = await bot.platform.info(true);
+  
+      await message.reply({
+        embed: {
+          color: COLORS.SUCCESS,
+          title: {
+            content: `Choco Bot (v${CONFIG.VERSION})`,
+          },
+          content: 'Shutting down...'
+        },
+      });
+
+      process.exit(0);
+    });
+  }
+};

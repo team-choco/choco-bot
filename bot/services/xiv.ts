@@ -3,4 +3,5 @@ import { CONFIG } from '../config';
 
 export const xiv = new XIV({
   xivapi: CONFIG.XIVAPI_TOKEN,
+  staging: CONFIG.ENVIRONMENT === 'local',
 });

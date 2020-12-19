@@ -1,5 +1,12 @@
 export enum COLORS {
   SUCCESS = '1ABC9C',
-  NOTIFY  = 'f1c40f',
+  NOTIFY = 'f1c40f',
   FAILURE = 'E74D3C',
-}
+};
+
+export enum EMOJI {
+  Tank = '784141358104969278',
+  Healer = '784141382850707477',
+  DPS = '784141405089693696',
+  AnyRole = '784139627044536320',
+};
