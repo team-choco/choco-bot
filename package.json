@@ -19,7 +19,7 @@
   "bin": "bin/index.js",
   "dependencies": {
     "@team-choco/command-plugin": "^0.1.8",
-    "@team-choco/core": "^0.1.8",
+    "@team-choco/core": "^0.1.13",
     "@team-choco/discord-platform": "^0.1.8",
     "@team-choco/utils": "^0.1.8",
     "@team-choco/xiv": "^0.1.5",
