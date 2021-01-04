@@ -11,7 +11,7 @@ import { choco } from '../services/choco/choco';
 import { i18n } from '../services/i18n';
 
 export const iam: ChocoBotCommand = (bot) => {
-  bot.command('iam', async ({ message }) => {
+  bot.command('iam', async ({ message } : {message:any}) => {
     let characters = await choco.characters.getPendingCharacters(message.author.id);
 
     if (characters.length === 0) {
@@ -209,4 +209,5 @@ export const whois: ChocoBotCommand = (bot) => {
       `,
     }));
   });
+  
 };
