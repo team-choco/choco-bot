@@ -17,7 +17,7 @@ export interface ICharacters {
 }
 
 @Table
-export class Characters extends Model<Characters> implements ICharacters {
+export class Characters extends Model<ICharacters> implements ICharacters {
   @Column({
     type: DataType.STRING,
     primaryKey: true,

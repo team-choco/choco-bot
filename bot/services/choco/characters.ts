@@ -10,7 +10,7 @@ export class ChocoCharacters {
     });
   }
 
-  async update(user_id: string, lodestone_id: number, character: Partial<ICharacters>) {
+  async update(user_id: string, lodestone_id: number, character: Partial<ICharacters>): Promise<ICharacters> {
     const { Characters } = await database();
 
     await Characters.update(character, {
@@ -20,12 +20,12 @@ export class ChocoCharacters {
       },
     });
 
-    return this.get(user_id, lodestone_id);
+    return await this.get(user_id, lodestone_id) as ICharacters;
   }
 
   async get(user_id: string): Promise<ICharacters[]>
-  async get(user_id: string, lodestone_id: number): Promise<ICharacters>
-  async get(user_id: string, lodestone_id?: number): Promise<(ICharacters | ICharacters[])> {
+  async get(user_id: string, lodestone_id: number): Promise<(null | ICharacters)>
+  async get(user_id: string, lodestone_id?: number): Promise<(null | ICharacters | ICharacters[])> {
     const { Characters } = await database();
 
     if (lodestone_id) {
@@ -46,7 +46,7 @@ export class ChocoCharacters {
     });
   }
 
-  async getMainCharacter(user_id: string): Promise<ICharacters> {
+  async getMainCharacter(user_id: string): Promise<(null | ICharacters)> {
     const { Characters } = await database();
 
     return Characters.findOne({
