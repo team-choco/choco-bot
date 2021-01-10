@@ -7,6 +7,10 @@ export const TRANSLATION: ChocoTranslation = {
   ALMOST_THERE: `Kweh! You're almost there!`,
   CODE: `Code`,
 
+  CHOCO_MESSAGE_DOES_NOT_EXIST: `Uh oh, looks like we couldn't find that message!`,
+  CHOCO_UNKNOWN_REACTION_TYPE: ({ type }) => `Oh no! Looks like that reaction type doesn't exist! (${type})`,
+  CHOCO_REACTION_TYPES: `Kweh! Here's a list of the available reactions!`,
+
   CHOCO_CHARACTER_NOT_FOUND: `Oh no! That character doesn't exist in our records!`,
   CHOCO_AUTHOR_NO_CHARACTERS: `Oh no! Looks like you don't have any characters!`,
   CHOCO_USER_NO_CHARACTERS: `Oh no! That user doesn't have any characters!`,
