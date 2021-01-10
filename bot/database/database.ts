@@ -1,4 +1,4 @@
-import { Sequelize, ModelCtor } from 'sequelize-typescript';
+import { Sequelize } from 'sequelize-typescript';
 
 import { CONFIG } from '../config';
 
@@ -6,7 +6,7 @@ import { Database } from './types';
 import { logger } from '../utils/logger';
 import { Characters } from './characters';
 
-const Models: ModelCtor[] = [
+const Models: any[] = [
   Characters,
 ];
 

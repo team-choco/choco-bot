@@ -5,7 +5,7 @@ export declare namespace Database {
   interface Options {
     /**
          * Whether we should include the models in the sequelize instance.
-         * 
+         *
          * @defaultValue false
          */
     excludeModels?: boolean;
@@ -17,6 +17,6 @@ export declare namespace Database {
          */
     db: Sequelize;
 
-    Characters: ModelCtor<Model<Characters, any>>;
+    Characters: typeof Characters;
   }
 }
