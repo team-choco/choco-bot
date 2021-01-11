@@ -1,18 +1,18 @@
 {
   "name": "@team-choco/choco-bot",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Kweh! Choco Bot is here for all your Final Fantasy XIV needs!",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/team-choco/auto-updater.git"
+    "url": "git+https://github.com/team-choco/choco-bot.git"
   },
   "contributors": [
     "Ceci Woodward <ceci@salte.io>"
   ],
   "bugs": {
-    "url": "https://github.com/team-choco/auto-updater/issues"
+    "url": "https://github.com/team-choco/choco-bot/issues"
   },
-  "homepage": "https://github.com/team-choco/auto-updater",
+  "homepage": "https://github.com/team-choco/choco-bot",
   "source": "bot/bot.ts",
   "main": "dist/choco-bot.js",
   "types": "dist/index.d.ts",
