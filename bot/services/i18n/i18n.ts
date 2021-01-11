@@ -1,9 +1,10 @@
 import { ChocoLanguage, ChocoTranslation, ChocoTranslationKeys, i18nFunction } from './types';
+import { TRANSLATION as EN } from './langs/en';
 
 const CACHED_TRANSLATIONS: {
   [key: string]: ChocoTranslation;
 } = {
-  en: require('./langs/en').TRANSLATION,
+  en: EN,
 };
 
 /**
