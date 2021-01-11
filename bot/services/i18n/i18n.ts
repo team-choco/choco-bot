@@ -2,7 +2,9 @@ import { ChocoLanguage, ChocoTranslation, ChocoTranslationKeys, i18nFunction } f
 
 const CACHED_TRANSLATIONS: {
   [key: string]: ChocoTranslation;
-} = {};
+} = {
+  en: require('./langs/en').TRANSLATION,
+};
 
 /**
  * Returns a message for the given language. Otherwise fallsback to english.
@@ -13,10 +15,6 @@ const CACHED_TRANSLATIONS: {
  * @returns the translated message.
  */
 export const i18n: i18nFunction = (key: ChocoTranslationKeys, lang: ChocoLanguage = 'en', params: any = {}) => {
-  if (!CACHED_TRANSLATIONS[lang]) {
-    CACHED_TRANSLATIONS[lang] = require(`./langs/${lang}`).TRANSLATION;
-  }
-
   const TRANSLATIONS = CACHED_TRANSLATIONS[lang];
   const TRANSLATION = TRANSLATIONS[key];
 
