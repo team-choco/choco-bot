@@ -8,19 +8,11 @@ import { ChocoEmbedField } from '@team-choco/core';
 
 export const help: ChocoBotCommand = (bot) => {
     bot.command('help', async ({ message }) => {
-        // let commands:any[] = []
-        // bot.commands.forEach(element => commands.push(element.options.pattern.commandOnlyRegex.toString().replace(/[!@#$%^&*/]/g, '').slice(0, -1)))
-        // commands.forEach(element => console.log(element))
-
-        const fields: ChocoEmbedField[] = [{
-            name: "Usage",
-            value: "Test",
-            inline: true,
-        }];
+        const fields: ChocoEmbedField[] = [];
 
         bot.commands.forEach(element => fields.push({
             name: element.options.pattern.commandOnlyRegex.toString().replace(/[!@#$%^&*/]/g, '').slice(0, -1),
-            value: 'Arguements',
+            value: arguements(element.options.pattern.args),
             inline: true
         }))
        
@@ -29,10 +21,20 @@ export const help: ChocoBotCommand = (bot) => {
             fields: fields
         }));
     })
+}
 
-    // console.log("Length of bot.commands " + bot.commands.length)
-    // console.log(JSON.stringify(bot.command))
-    bot.commands.forEach(element => console.log(element.options.pattern.commandOnlyRegex.toString().replace(/[!@#$%^&*/]/g, '').slice(0, -1)))
-    bot.commands.forEach(element => console.log(element.options.pattern.args))
-    // console.log((bot.commands))
+function arguements(x: any[])
+{
+    if(x == undefined || x.length == 0)
+        return 'none'
+    
+    const n = x.length
+    const commands = []
+
+    for(var i = 0; i < n; i++)
+    {
+        commands.push("<" + x[i].name + ">")
+    }
+
+    return commands.join(' ')
 }
