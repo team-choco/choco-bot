@@ -4,10 +4,8 @@ import { CONFIG } from '../config';
 
 import { Database } from './types';
 import { logger } from '../utils/logger';
-import { Characters } from './characters';
 
 const Models: any[] = [
-  Characters,
 ];
 
 export async function database(options: Database.Options = {}): Promise<Database.Response> {
@@ -27,6 +25,5 @@ export async function database(options: Database.Options = {}): Promise<Database
 
   return {
     db,
-    Characters,
   };
 }

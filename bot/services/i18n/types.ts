@@ -20,26 +20,6 @@ export interface ChocoTranslation {
   CHOCO_MESSAGE_DOES_NOT_EXIST: ChocoTranslationValue;
   CHOCO_UNKNOWN_REACTION_TYPE: ChocoTranslationValue;
   CHOCO_REACTION_TYPES: ChocoTranslationValue;
-
-  // -- Internal Character Messages
-  CHOCO_CHARACTER_NOT_FOUND: ChocoTranslationValue;
-  CHOCO_AUTHOR_NO_CHARACTERS: ChocoTranslationValue;
-  CHOCO_USER_NO_CHARACTERS: ChocoTranslationValue;
-  CHOCO_ALL_CHARACTERS_VALIDATED: ChocoTranslationValue;
-  CHOCO_CHARACTERS_BELONG_TO: ChocoTranslationValue;
-
-  CHOCO_CHARACTER_VALIDATED: ChocoTranslationValue;
-  CHOCO_CHARACTERS_VALIDATED: ChocoTranslationValue;
-  CHOCO_CHARACTERS_AWAITING_VALIDATION: ChocoTranslationValue;
-  CHOCO_CHARACTER_ALREADY_VALIDATED: ChocoTranslationValue;
-
-  CHOCO_ADD_CHARACTER_CODE: ChocoTranslationValue;
-  CHOCO_CHARACTER_INFO: ChocoTranslationValue;
-  CHOCO_CHARACTER_INFO_LIST: ChocoTranslationValue;
-
-  // -- Lodestone Character Messages
-  LODESTONE_NO_CHARACTERS_EXIST: ChocoTranslationValue;
-  LODESTONE_MULTIPLE_CHARACTERS_EXIST: ChocoTranslationValue;
 }
 
 export type ChocoTranslationKeys = keyof ChocoTranslation;

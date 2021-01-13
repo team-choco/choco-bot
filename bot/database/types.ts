@@ -1,5 +1,4 @@
-import { Sequelize, Model, ModelCtor } from 'sequelize-typescript';
-import { Characters } from './characters';
+import { Sequelize } from 'sequelize-typescript';
 
 export declare namespace Database {
   interface Options {
@@ -16,7 +15,5 @@ export declare namespace Database {
          * The sequelize instance.
          */
     db: Sequelize;
-
-    Characters: typeof Characters;
   }
 }
