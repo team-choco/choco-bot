@@ -20,6 +20,15 @@ export interface ChocoTranslation {
   CHOCO_MESSAGE_DOES_NOT_EXIST: ChocoTranslationValue;
   CHOCO_UNKNOWN_REACTION_TYPE: ChocoTranslationValue;
   CHOCO_REACTION_TYPES: ChocoTranslationValue;
+
+  // -- Config Parameters
+  CHOCO_CONFIG_REQUIRES_SERVER: ChocoTranslationValue;
+  CHOCO_CONFIG_INVALID_KEY: ChocoTranslationValue;
+
+  CHOCO_CONFIG_REMOVE_SUCCESS: ChocoTranslationValue;
+  CHOCO_CONFIG_SET_SUCCESS: ChocoTranslationValue;
+  CHOCO_CONFIG_GET_SUCCESS: ChocoTranslationValue;
+  CHOCO_CONFIG_GET_FAILURE: ChocoTranslationValue;
 }
 
 export type ChocoTranslationKeys = keyof ChocoTranslation;
