@@ -12,10 +12,6 @@ export type ChocoTranslationFunction = (params: ChocoTranslationParams, i18n: i1
 export type ChocoTranslationValue = (string|ChocoTranslationFunction)
 
 export interface ChocoTranslation {
-  // -- Generic Messages
-  ALMOST_THERE: ChocoTranslationValue;
-  CODE: ChocoTranslationValue;
-
   // -- React Messages
   CHOCO_MESSAGE_DOES_NOT_EXIST: ChocoTranslationValue;
   CHOCO_UNKNOWN_REACTION_TYPE: ChocoTranslationValue;
