@@ -1,4 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
+import { Parameters } from './parameters';
 
 export declare namespace Database {
   interface Options {
@@ -15,5 +16,7 @@ export declare namespace Database {
          * The sequelize instance.
          */
     db: Sequelize;
+
+    Parameters: typeof Parameters;
   }
 }
