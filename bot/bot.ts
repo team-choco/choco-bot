@@ -8,6 +8,7 @@ import { COMMANDS } from './commands';
 import { logger } from './utils/logger';
 import { failure } from './utils/embeds';
 import { ChocoCommandError, ChocoBotStartOptions } from './types';
+import { choco } from './services/choco/choco';
 
 export function start(options: ChocoBotStartOptions = {}): ChocoBotCore {
   if (options.databaseUrl) {
@@ -30,12 +31,20 @@ export function start(options: ChocoBotStartOptions = {}): ChocoBotCore {
     CONFIG.LOG_LEVEL = options.logLevel;
   }
 
-  const bot = new ChocoBotCore({
+  const bot: ChocoBotCore = new ChocoBotCore({
     platform: getPlatform(CONFIG.PLATFORM),
 
     plugins: [
       new ChocoCommandPlugin({
-        prefix: '!',
+        prefix: async (message) => {
+          if (bot.isServerMessage(message)) {
+            const parameter = await choco.parameters.get(message.server_id, 'prefix');
+
+            return parameter ? parameter.value : '!';
+          }
+
+          return '!';
+        },
       }),
     ],
   });

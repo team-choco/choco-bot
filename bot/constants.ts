@@ -40,3 +40,11 @@ export enum EMOJI {
   RED_MAGE = '790867322997964870',
   BLUE_MAGE = '790867322796900393',
 }
+
+export enum CONFIG_PARAMETERS {
+  PREFIX = 'prefix',
+}
+
+export function isConfigParameter(key: any): boolean {
+  return Object.values(CONFIG_PARAMETERS).includes(key);
+}
