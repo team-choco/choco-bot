@@ -59,7 +59,7 @@
     "build": "microbundle --target node -f cjs",
     "start": "nodemon --require dotenv/config --exec ts-node ./bot/index.ts",
     "start:dev": "ts-node .",
-    "validate": "run-p test:coverage test:integration lint",
+    "validate": "run-p test:coverage lint",
     "test": "jest",
     "test:integration": "npm run test -- --config jest.integration.config.js",
     "test:coverage": "npm run test -- --coverage",
