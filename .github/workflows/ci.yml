@@ -9,33 +9,33 @@ on:
       - master
 
 jobs:
-  # Validate:
-  #   runs-on: ubuntu-18.04
+  Validate:
+    runs-on: ubuntu-18.04
 
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #       with:
-  #         fetch-depth: 0
-  #     - name: Use Node.js
-  #       uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 14
-  #     - name: Install Dependencies
-  #       run: npm i
-  #     - name: Build Code
-  #       run: npm run build
-  #     - name: Validate
-  #       run: npm run validate
-  #     - name: Coveralls
-  #       uses: coverallsapp/github-action@master
-  #       with:
-  #         github-token: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: Install Dependencies
+        run: npm i
+      - name: Build Code
+        run: npm run build
+      - name: Validate
+        run: npm run validate
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
   Release:
     runs-on: ubuntu-18.04
     if: github.ref == 'refs/heads/master'
-    # needs: [Validate]
+    needs: [Validate]
 
     steps:
       - name: Checkout
