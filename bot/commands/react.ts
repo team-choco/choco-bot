@@ -53,19 +53,19 @@ const REACTION_TYPES: { [key: string]: EMOJI|EMOJI[] } = {
 export const react: ChocoBotCommand = (bot) => {
   bot.command('react', async ({ message }) => {
     const chunkedTypes = chunk(Object.keys(REACTION_TYPES).map((type) =>
-      `- ${type}`
+      `- ${type}`,
     ), 5);
 
     await message.reply(notify({
       title: ['React'],
       content: i18n('CHOCO_REACTION_TYPES', 'en', {
-        types: Object.keys(REACTION_TYPES)
+        types: Object.keys(REACTION_TYPES),
       }),
       fields: chunkedTypes.map((types, i) => ({
         name: `Types (${i + 1}/${chunkedTypes.length})`,
         value: types.join('\r\n'),
         inline: true,
-      }))
+      })),
     }));
   });
 
