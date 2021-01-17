@@ -1,5 +1,8 @@
 **NOTE: THIS BOT IS CURRENTLY UNDER HEAVY DEVELOPMENT, USE AT YOUR OWN RISK**
 
+[![NPM Version][npm-version-image]][npm-url]
+[![NPM Downloads][npm-downloads-image]][npm-url]
+
 ## @team-choco/choco-bot
 
 > Kweh! Choco Bot is here for all your Final Fantasy XIV needs!
@@ -91,3 +94,7 @@ $ npm install -g @team-choco/choco-bot
 $ choco-bot --token <your-discord-token>
 ```
 -->
+
+[npm-version-image]: https://img.shields.io/npm/v/@team-choco/choco-bot.svg?style=flat
+[npm-downloads-image]: https://img.shields.io/npm/dm/@team-choco/choco-bot.svg?style=flat
+[npm-url]: https://npmjs.org/package/@team-choco/choco-bot
