@@ -37,13 +37,17 @@ export function start(options: ChocoBotStartOptions = {}): ChocoBotCore {
     plugins: [
       new ChocoCommandPlugin({
         prefix: async (message) => {
+          let prefix = '!';
+
           if (bot.isServerMessage(message)) {
             const parameter = await choco.parameters.get(message.server_id, 'prefix');
 
-            return parameter ? parameter.value : '!';
+            if (parameter) {
+              prefix = parameter.value;
+            }
           }
 
-          return '!';
+          return ['!!!', prefix];
         },
       }),
     ],
