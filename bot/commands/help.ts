@@ -5,6 +5,7 @@ import { success, notify, embed } from '../utils/embeds';
 import { COLORS } from '../constants';
 import { CONFIG } from '../config';
 import { ChocoEmbedField } from '@team-choco/core';
+import { PositionalArgumentDetails } from '@team-choco/command-plugin';
 
 export const help: ChocoBotCommand = (bot) => {
     bot.command('help', async ({ message }) => {
@@ -23,7 +24,7 @@ export const help: ChocoBotCommand = (bot) => {
     })
 }
 
-function arguements(x: any[])
+function arguements(x: PositionalArgumentDetails[])
 {
     if(x == undefined || x.length == 0)
         return 'none'

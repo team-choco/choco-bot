@@ -1,6 +1,6 @@
 import { ChocoBotCommand } from './types';
 
-import * as TestCommands from './test'
+import * as TestCommands from './help'
 import * as DebugCommands from './debug';
 import * as LodestoneCommands from './lodestone';
 
