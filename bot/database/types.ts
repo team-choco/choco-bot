@@ -1,11 +1,11 @@
-import { Sequelize, Model, ModelCtor } from 'sequelize-typescript';
-import { Characters } from './characters';
+import { Sequelize } from 'sequelize-typescript';
+import { Parameters } from './parameters';
 
 export declare namespace Database {
   interface Options {
     /**
          * Whether we should include the models in the sequelize instance.
-         * 
+         *
          * @defaultValue false
          */
     excludeModels?: boolean;
@@ -17,6 +17,6 @@ export declare namespace Database {
          */
     db: Sequelize;
 
-    Characters: ModelCtor<Model<Characters, any>>;
+    Parameters: typeof Parameters;
   }
 }

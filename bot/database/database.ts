@@ -1,13 +1,13 @@
-import { Sequelize, ModelCtor } from 'sequelize-typescript';
+import { Sequelize } from 'sequelize-typescript';
 
 import { CONFIG } from '../config';
 
 import { Database } from './types';
 import { logger } from '../utils/logger';
-import { Characters } from './characters';
+import { Parameters } from './parameters';
 
-const Models: ModelCtor[] = [
-  Characters,
+const Models: any[] = [
+  Parameters,
 ];
 
 export async function database(options: Database.Options = {}): Promise<Database.Response> {
@@ -27,6 +27,6 @@ export async function database(options: Database.Options = {}): Promise<Database
 
   return {
     db,
-    Characters,
+    Parameters,
   };
 }

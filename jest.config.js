@@ -3,7 +3,7 @@ module.exports = {
   cacheDirectory: './node_modules/.cache/jest',
   clearMocks: true,
   collectCoverageFrom: [
-    'src/**/*.ts',
+    'bot/**/*.ts',
   ],
   coveragePathIgnorePatterns : [
     '<rootDir>/.*/__test__/',

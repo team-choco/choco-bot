@@ -1,11 +1,11 @@
-import { ChocoCharacters } from './characters';
+import { ChocoParameters } from './parameters';
 
 export class ChocoService {
-    public characters: ChocoCharacters;
+  public parameters: ChocoParameters;
 
-    constructor() {
-        this.characters = new ChocoCharacters();
-    }
+  constructor() {
+    this.parameters = new ChocoParameters();
+  }
 }
 
 export const choco = new ChocoService();

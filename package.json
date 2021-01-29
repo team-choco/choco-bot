@@ -1,65 +1,65 @@
 {
   "name": "@team-choco/choco-bot",
-  "version": "0.1.2",
+  "version": "0.1.7",
   "description": "Kweh! Choco Bot is here for all your Final Fantasy XIV needs!",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/team-choco/auto-updater.git"
+    "url": "git+https://github.com/team-choco/choco-bot.git"
   },
   "contributors": [
-    "Nick Woodward <nick@salte.io>"
+    "Ceci Woodward <ceci@salte.io>"
   ],
   "bugs": {
-    "url": "https://github.com/team-choco/auto-updater/issues"
+    "url": "https://github.com/team-choco/choco-bot/issues"
   },
-  "homepage": "https://github.com/team-choco/auto-updater",
+  "homepage": "https://github.com/team-choco/choco-bot",
   "source": "bot/bot.ts",
   "main": "dist/choco-bot.js",
   "types": "dist/index.d.ts",
   "bin": "bin/index.js",
   "dependencies": {
-    "@team-choco/command-plugin": "^0.1.18",
-    "@team-choco/core": "^0.1.16",
-    "@team-choco/discord-platform": "^0.1.17",
-    "@team-choco/utils": "^0.1.8",
-    "@team-choco/xiv": "^0.1.5",
+    "@team-choco/command-plugin": "^0.2.0",
+    "@team-choco/core": "^0.2.0",
+    "@team-choco/discord-platform": "^0.2.0",
+    "@team-choco/utils": "^0.1.9",
+    "@team-choco/xiv": "^0.1.7",
     "chalk": "^4.1.0",
     "dotenv": "^8.2.0",
-    "outdent": "^0.7.1",
-    "sequelize": "^5.0.0",
-    "sequelize-typescript": "^1.1.0",
+    "outdent": "^0.8.0",
+    "sequelize": "^6.3.5",
+    "sequelize-typescript": "^2.0.0-beta.1",
     "update-check": "^1.5.4",
-    "yargs": "^15.4.0"
+    "yargs": "^16.2.0"
   },
   "devDependencies": {
-    "@team-choco/shell-platform": "^0.1.17",
+    "@team-choco/shell-platform": "^0.2.0",
     "@types/chance": "^1.1.0",
     "@types/debug": "^4.1.5",
     "@types/jest": "^26.0.3",
-    "@types/node": "^12.12.47",
-    "@types/node-fetch": "^2.5.7",
-    "@typescript-eslint/eslint-plugin": "^3.4.0",
-    "@typescript-eslint/parser": "^3.4.0",
+    "@types/node": "^14.14.21",
+    "@types/node-fetch": "^2.5.8",
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "@typescript-eslint/parser": "^4.13.0",
     "chance": "^1.1.6",
-    "eslint": "^7.3.1",
+    "eslint": "^7.18.0",
     "eslint-plugin-tsdoc": "^0.2.5",
-    "husky": "^4.2.5",
-    "jest": "^26.1.0",
+    "husky": "^4.3.8",
+    "jest": "^26.6.3",
     "lint-staged": "^10.2.11",
-    "microbundle": "^0.12.2",
+    "microbundle": "^0.13.0",
     "nodemon": "^2.0.4",
     "npm-run-all": "^4.1.5",
     "remove-lockfiles": "^2.1.3",
     "sqlite3": "^5.0.0",
-    "ts-node": "^8.10.2",
-    "ts-jest": "^26.1.1",
-    "typescript": "^3.9.5"
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
   },
   "scripts": {
     "build": "microbundle --target node -f cjs",
     "start": "nodemon --require dotenv/config --exec ts-node ./bot/index.ts",
     "start:dev": "ts-node .",
-    "validate": "run-p test:coverage test:integration lint",
+    "validate": "run-p test:coverage lint",
     "test": "jest",
     "test:integration": "npm run test -- --config jest.integration.config.js",
     "test:coverage": "npm run test -- --coverage",
@@ -69,7 +69,7 @@
     "prepublishOnly": "npm run build"
   },
   "engines": {
-    "node": ">=12 <=14"
+    "node": "14>="
   },
   "husky": {
     "hooks": {
