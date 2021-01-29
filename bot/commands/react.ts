@@ -78,9 +78,9 @@ export const react: ChocoBotCommand = (bot) => {
       }));
     }
 
-    const [, serverID, channelID, messageID] = args.link.match(/^https:\/\/discord.com\/channels\/(\d+|@me)\/(\d+)\/(\d+)\/?$/);
+    const [, , channelID, messageID] = args.link.match(/^https:\/\/discord.com\/channels\/(\d+|@me)\/(\d+)\/(\d+)\/?$/);
 
-    const message = await bot.message(serverID, channelID, messageID);
+    const message = await bot.message(channelID, messageID);
 
     if (message === null) {
       throw new ChocoCommandError(i18n('CHOCO_MESSAGE_DOES_NOT_EXIST'));

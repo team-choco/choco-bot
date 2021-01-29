@@ -18,9 +18,9 @@
   "types": "dist/index.d.ts",
   "bin": "bin/index.js",
   "dependencies": {
-    "@team-choco/command-plugin": "^0.1.26",
-    "@team-choco/core": "^0.1.26",
-    "@team-choco/discord-platform": "^0.1.26",
+    "@team-choco/command-plugin": "^0.2.0",
+    "@team-choco/core": "^0.2.0",
+    "@team-choco/discord-platform": "^0.2.0",
     "@team-choco/utils": "^0.1.9",
     "@team-choco/xiv": "^0.1.7",
     "chalk": "^4.1.0",
@@ -32,7 +32,7 @@
     "yargs": "^16.2.0"
   },
   "devDependencies": {
-    "@team-choco/shell-platform": "^0.1.26",
+    "@team-choco/shell-platform": "^0.2.0",
     "@types/chance": "^1.1.0",
     "@types/debug": "^4.1.5",
     "@types/jest": "^26.0.3",
